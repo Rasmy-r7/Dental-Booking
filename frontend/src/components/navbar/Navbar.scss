@@ -1,0 +1,343 @@
+@import '../../styles/colors';
+@import '../../styles/media';
+@import '../../styles/variables';
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 72px;
+    background-color: $accent;
+    // background-color: red;
+    border-bottom: 1px solid rgba(229, 229, 229, 1);
+
+    @include tablet {
+        padding: 8px 32px;
+    }
+
+    @include mobile {
+        padding: 8px 16px;
+    }
+
+    .navbar_logo {
+        width: 122px;
+        height: 56px;
+        cursor: pointer;
+    }
+
+    .navbar_filters {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 449px;
+        height: 56px;
+        padding: 12px;
+        border: 1px solid $stroke;
+        border-radius: 32px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+
+        .navbar_select {
+            padding: 0px 16px;
+            height: 32px;
+            border-radius: 8px;
+            background-color: $neutral;
+            font-size: 16px;
+            font-weight: 500;
+            color: $primary-text;
+            outline: none;
+            border: none;
+            background: transparent;
+
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+
+            &:hover {
+                outline: none;
+            }
+        }
+
+        .search_icon {
+            height: 32px;
+            width: 32px;
+            padding: 8px;
+            border-radius: 26px;
+            background-color: $primary-500;
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            color: $accent;
+
+        }
+
+    }
+
+    .nav_search_box {
+        position: relative;
+
+        .nav_search_input {
+            width: 160px;
+            height: 48px;
+            padding: 8px 8px 8px 12px;
+            border: 1px solid $border;
+            border-radius: 32px;
+            font-size: 16px;
+            outline: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+
+        }
+
+        .nav_search_icon {
+            width: 32px;
+            height: 32px;
+            background-color: $primary-500;
+            color: $neutral;
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            border-radius: 26px;
+            padding: 8px;
+
+        }
+
+    }
+
+    .location_btn {
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        width: 131px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px;
+        border-radius: 32px;
+        font-size: 16px;
+        font-weight: 500;
+        background-color: $accent;
+        color: $primary-text ;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+
+        .location_logo {
+            height: 24px;
+            width: 24px;
+        }
+    }
+
+    .Navbar_icon {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        svg {
+            font-size: 40px;
+            background-color: rgba(242, 242, 242, 1);
+            color: $primary-text;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 40px;
+            transition: color 0.2s ease;
+        }
+    }
+
+    .menu_icon {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        svg {
+            font-size: 40px;
+            background-color: rgba(242, 242, 242, 1);
+            color: $primary-text;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 40px;
+            transition: color 0.2s ease;
+        }
+    }
+
+
+
+    .navbar_filters,
+    .location_btn,
+    .Navbar_icon {
+        @include both {
+            display: none;
+        }
+    }
+
+    .nav_search_box {
+        display: none;
+
+        @include tablet {
+            display: block;
+
+        }
+
+        @include mobile {
+            .nav_search_input {
+                display: none;
+            }
+        }
+    }
+
+    .menu_icon {
+        display: none;
+
+        @include both {
+            display: flex;
+            align-items: center;
+            gap: 12px; // You can adjust the spacing here
+        }
+
+        .nav_search_icon {
+            display: none;
+            background-color: $primary-500;
+            color: $accent;
+
+            @include mobile {
+                display: block;
+            }
+        }
+
+        svg {
+            font-size: 48px;
+            background-color: $neutral-2;
+            color: $primary-text;
+            padding: 8px;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+    }
+
+}
+
+// mobile_menu
+.mobile_menu {
+    z-index: 1;
+    display: none;
+    width: 100%;
+    background-color: $accent;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    @include both {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        opacity: 1;
+        transform: translateY(0);
+
+        .mobile_logo_close {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 16px;
+            border-bottom: 2px solid $border ;
+
+
+            .navbar_logo {
+                width: 122px;
+                height: 56px;
+                cursor: pointer;
+            }
+
+            svg {
+                font-size: 32px;
+            }
+        }
+
+        .mobile_contant {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 8px 16px;
+
+            .location_btn {
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                width: 131px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 8px;
+                border-radius: 32px;
+                font-size: 16px;
+                font-weight: 500;
+                background-color: $accent;
+                color: $primary-text ;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+
+                .location_logo {
+                    height: 24px;
+                    width: 24px;
+                }
+            }
+
+            .navbar_filters {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap: 24px;
+
+                padding: 12px;
+
+
+                .navbar_select {
+                    border-radius: 32px;
+                    height: 32px;
+                    border-radius: 8px;
+                    background-color: $neutral;
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: $primary-text;
+                    outline: none;
+                    border: none;
+                    background: transparent;
+                    cursor: pointer;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &:hover {
+                        outline: none;
+                    }
+
+                }
+
+            }
+
+            .Navbar_icon {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                svg {
+                    font-size: 40px;
+                    background-color: rgba(242, 242, 242, 1);
+                    color: $primary-text;
+                    padding: 8px;
+                    cursor: pointer;
+                    border-radius: 40px;
+                    transition: color 0.2s ease;
+                }
+            }
+        }
+
+
+
+
+
+    }
+
+}
