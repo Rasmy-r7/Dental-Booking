@@ -3,14 +3,16 @@ import React, { useState } from 'react'
 import "./Navbar.scss"
 import logoBlack from "../../assets/logoBlack.png"
 import locationLogo from "../../assets/location_logo.png"
-import { CiHeart,CiSearch } from "react-icons/ci";
+import { CiHeart, CiSearch } from "react-icons/ci";
 import { GrLanguage } from "react-icons/gr";
 import { GoPerson } from "react-icons/go";
 import { IoMenu, IoClose } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
 
 function Navbar() {
   const [filter, setFilter] = useState(false)
+  const navigate = useNavigate()
   return (
     <>
       <div className='navbar'>
@@ -29,7 +31,7 @@ function Navbar() {
             <CiSearch />
           </div>
         </div>
-        <button className='location_btn'>
+        <button className='location_btn' onClick={()=> navigate("location")}>
           <img src={locationLogo} alt="" className='location_logo' />
           Locations
         </button>

@@ -95,7 +95,7 @@ function Home() {
         <div className="clinic_cards_main">
           {clinicData.map((clinic, index) => (
             <div className="clinic_card" key={index}>
-              <div className="image_contant">
+              <div className="image_content">
                 <FaHeart className="heart_icon" />
                 <img src={clinic.image} alt="Clinic" className="clinic_card_image" />
               </div>

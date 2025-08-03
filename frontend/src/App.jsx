@@ -4,6 +4,8 @@ import "./App.scss";
 import CommonLayout from './views/CommonLayout';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
+import Landing from './pages/landing/Landing';
+import Location from './pages/location/Location';
 
 
 function App() {
@@ -12,8 +14,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<CommonLayout />}>
+            <Route element={<Landing />} />
             <Route index element={<Home />} />
-            <Route path='login' element={<Login/>}/>
+            <Route path='login' element={<Login />} />
+            <Route path='location' element={<Location />} />
 
           </Route>
 
