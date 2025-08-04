@@ -1,0 +1,682 @@
+@import '../../styles/colors';
+@import '../../styles/media';
+@import '../../styles/variables';
+
+
+.clinic_page {
+    width: 100%;
+
+    @include tablet {
+        padding: 24px 32px;
+    }
+
+    @include mobile {
+        padding: 16px;
+    }
+
+    .clinic_nav {
+        padding: 16px 72px;
+        display: flex;
+        align-items: flex-end;
+        background-color: $accent;
+        border-bottom: 1px solid $border;
+
+        @include tablet {
+            padding: 16px;
+        }
+
+        @include mobile {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+
+
+            li {
+                .clinic_tab {
+                    padding: 12px;
+                    text-decoration: none;
+                    color: $secondary-text;
+                    font-weight: 500;
+                    font-size: 16px;
+                    transition: all 0.3s ease;
+
+                    &.active {
+                        color: $primary-text;
+                        // border-bottom: 3px solid black;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .clinic_banner {
+        padding: 32px 72px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 24px;
+
+        @include tablet {
+            flex-direction: column;
+            padding: 0px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            padding: 16px;
+        }
+
+        .Image_and_slider {
+            order: 1;
+
+            @include both {
+                order: 2;
+            }
+
+            .clinic_banner_image {
+
+                .clinic_img {
+                    width: 856px;
+                    height: 456px;
+                    object-fit: cover;
+                    border-radius: 16px;
+
+                    @include tablet {
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    @include mobile {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+
+
+        .clinic_banner_info {
+            background-color: $accent;
+            width: 416px;
+            height: 470px;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+            order: 2;
+
+
+            @include tablet {
+                order: 1;
+
+                width: 100%;
+                height: auto;
+            }
+
+            @include mobile {
+                order: 1;
+                width: 100%;
+                height: auto;
+            }
+
+            .clinic_banner_text {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                .clinic_banner_name {
+                    font-size: 26px;
+                    font-weight: 600;
+                    color: $primary-text;
+                }
+
+                .clinic_banner_description {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: $secondary-text;
+                }
+            }
+
+            .clinic_contact_info {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+
+                .clinic_contact_item {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: $primary-text;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    svg {
+                        font-size: 20px;
+                        color: $secondary-text ;
+                    }
+                }
+            }
+
+            .clinic_opening_hours {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                .clinic_section_title {
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: $primary-text;
+                }
+
+                .clinic_day_row {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: $primary-text;
+
+                    .clinic_day {
+                        width: 77px;
+                    }
+                }
+            }
+
+            .clinic_buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                @include tablet {
+                    flex-direction: row;
+                    width: 100%;
+                }
+
+                @include mobile {
+                    width: 100%;
+                    flex-direction: column;
+
+                }
+
+                .clinic_button {
+                    width: 100%;
+                    padding: 14px 24px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    border-radius: 12px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+
+
+                    &.primary_btn {
+                        background-color: $primary-500;
+                        color: $accent;
+                        border: none;
+
+                    }
+
+                    &.secondary_btn {
+                        background-color: $neutral-2;
+                        color: $primary-text;
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+
+    .clinic_details {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 32px 72px;
+        width: 854px;
+
+        @include tablet {
+            width: 100%;
+            padding: 24px 32px;
+        }
+
+        @include mobile {
+            width: 100%;
+            padding: 16px;
+        }
+
+        .section_title {
+            font-size: 22px;
+            font-weight: 600;
+            color: $primary-text;
+
+            @include mobile {
+                font-size: 20px;
+            }
+        }
+
+        .about_section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .about_text {
+                font-size: 16px;
+                font-weight: 400;
+                color: $primary-text;
+                line-height: 24px;
+            }
+        }
+
+        // 
+
+        .why_choose_us {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+
+            .features_grid {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .feature_card {
+                display: flex;
+                gap: 12px;
+
+                .feature_icon {
+                    font-size: 22px;
+                    color: $secondary-text;
+                    flex-shrink: 0;
+                }
+
+                .feature_content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    .feature_title {
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: $primary-text;
+                    }
+
+                    .feature_text {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $secondary-text;
+                    }
+                }
+            }
+        }
+
+        // 
+
+        .clinic_treatments {
+            padding: 32px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .clinic_section_title {
+                font-size: 22px;
+                font-weight: 600;
+                color: $primary-text;
+
+                @include mobile {
+                    font-size: 20px;
+                }
+            }
+
+            .treatment_categories {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .treatment_category {
+                width: 854px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                @include both {
+                    width: 100%;
+                }
+
+
+                .category_title {
+                    border: 1px solid $border;
+                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+                    padding: 16px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: $primary-text;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 8px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+
+                    .chevron_icon {
+                        font-size: 18px;
+                        transition: transform 0.3s ease;
+                        color: $primary-text;
+                    }
+
+                    &.open .chevron_icon,
+                    .chevron_icon.rotated {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                .treatment_list {
+                    padding: 0 32px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    .treatment_card {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 8px;
+                        border-bottom: 1px solid $border;
+
+                        .treatment_name {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: $primary-text;
+                        }
+
+                        .treatment_price {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: $primary-text;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 
+        .clinic_team {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            .section_title {
+                font-size: 22px;
+                font-weight: 600;
+                color: $primary-text;
+
+                @include mobile {
+                    font-size: 20px;
+                }
+            }
+
+            .team_grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+                width: 854px;
+
+                @include tablet {
+                    width: 100%;
+                }
+
+                @include mobile {
+                    width: 100%;
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .team_card {
+                border-radius: 16px;
+                padding: 16px;
+                box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                .team_profile {
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+
+                    .team_img {
+                        width: 72px;
+                        height: 72px;
+                        border-radius: 57px;
+                        object-fit: cover;
+                    }
+
+                    .dr_details {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+
+                        .team_name {
+                            font-size: 18px;
+                            font-weight: 500;
+                            color: $primary-text;
+                        }
+
+                        .team_qualifications {
+                            font-size: 14px;
+                            color: $secondary-text;
+                            margin-top: 4px;
+                        }
+                    }
+
+                }
+
+                .team_specialties,
+                .team_languages {
+                    display: flex;
+                    gap: 16px;
+
+                    .team_icon {
+                        font-size: 24px;
+                        color: $secondary-text;
+                    }
+
+                    .team_section_title {
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: $secondary-text;
+                        margin-bottom: 4px;
+                    }
+
+                    .team_text {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $primary-text;
+                    }
+                }
+            }
+        }
+
+        // 
+
+        .reviews_section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 32px 0;
+            width: 854px;
+
+            @include both{
+                width: 100%;
+            }
+
+            .reviews_header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .section_title {
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+
+                .review_btn {
+                    padding: 11px 12px;
+                    border: none;
+                    background-color: $neutral-2;
+                    color: $primary-text;
+                    border-radius: 8px;
+                    cursor: pointer;
+                }
+            }
+
+            .reviews_overview {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .average_rating {
+                    font-size: 48px;
+                    font-weight: 500;
+                    color: $primary-text;
+                }
+
+                .rating_label {
+                    font-weight: 500;
+                    color: $secondary-text;
+                    font-size: 18px;
+                }
+            }
+
+            .reviews_filter {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .review_count {
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: $primary-text;
+                }
+
+                .filter_select {
+                    width: 201px;
+                    padding: 8px 16px;
+                    border-radius: 4px;
+                    border: 1px solid $border;
+                }
+            }
+
+            .review_cards {
+
+                .review_card {
+                    padding: 16px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    gap: 8px;
+
+                    .review_user {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+
+                        .review_user_img {
+                            width: 48px;
+                            height: 48px;
+                            border-radius: 57px;
+                            object-fit: cover;
+                        }
+
+                        .review_user_name {
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: $primary-text;
+                        }
+
+                        .review_user_location {
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: $secondary-text;
+                        }
+                    }
+
+                    .review_rating {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+
+                        .stars {
+                            display: flex;
+                            gap: 2px;
+                            list-style: none;
+                            color: $primary-text;
+                        }
+
+                        .review_date {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: $primary-text;
+                        }
+                    }
+
+                    .review_text {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $primary-text;
+                    }
+
+                    .review_showmore {
+                        color: $primary-text;
+                        text-decoration: underline;
+                        font-size: 16px;
+                        cursor: pointer;
+                        padding: 11px 12px;
+                    }
+                }
+            }
+
+
+        }
+
+
+
+    }
+
+
+}
+
+.clinic_error {
+    padding: 48px;
+    text-align: center;
+
+    h2 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    p {
+        font-size: 16px;
+        // color: $secondary-text;
+    }
+}

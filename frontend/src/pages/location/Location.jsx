@@ -4,6 +4,7 @@ import locationBg from '../../assets/clinicImg2.jpg';
 import { FaChevronDown, FaHeart } from 'react-icons/fa';
 import cardImage from '../../assets/cardImage.jpg';
 import { IoMdStar } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 
 
@@ -19,71 +20,722 @@ const locationData = [
                         _id: 1,
                         Pname: "Smile Zone Clinic",
                         location: "Colombo, Western Province",
+                        description: "Your Smile, Our Priority – World-Class Dental Care in the Heart of Colombo",
+                        address: "16 Galle Road, Colombo 03, Sri Lanka",
+                        email: "info@smilezone.lk",
+                        reviews: 247,
                         rating: 4.8,
-                        image: cardImage
+                        about: "Smile Zone Clinic Dental Centre is a leading dental clinic in Colombo, Sri Lanka, dedicated to providing exceptional dental care to both local and international patients. Established in 2005, we combine cutting-edge technology with a compassionate approach, ensuring a comfortable and effective treatment experience. Our mission is to make high-quality, affordable dental care accessible to everyone.",
+                        image: cardImage,
+                        treatments: [
+                            {
+
+                                title: "Implant Procedures",
+                                treatments: [
+                                    { name: "Single Tooth Implant", price: 60000 },
+                                    { name: "All-on-4 Implants", price: 250000 },
+                                ],
+                            },
+                            {
+                                title: "Crowns/Veneers",
+                                treatments: [
+                                    { name: "Porcelain Crown", price: 15000 },
+                                    { name: "Ceramic Veneer", price: 18000 },
+                                ],
+                            },
+                            {
+                                title: "Dentures",
+                                treatments: [
+                                    { name: "Complete Denture", price: 35000 },
+                                    { name: "Partial Denture", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Root Canal Treatment",
+                                treatments: [
+                                    { name: "Anterior Tooth", price: 10000 },
+                                    { name: "Molar Tooth", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Cleaning, Whitening, Filling & Extractions",
+                                treatments: [
+                                    { name: "Teeth Cleaning", price: 3000 },
+                                    { name: "Teeth Whitening", price: 5000 },
+                                    { name: "Tooth Filling", price: 2500 },
+                                    { name: "Tooth Extraction", price: 3500 },
+                                ],
+                            },
+                            {
+                                title: "Diagnostics",
+                                treatments: [
+                                    { name: "X-Ray (Single)", price: 1500 },
+                                    { name: "Full Mouth X-Ray", price: 5000 },
+                                ],
+                            },
+                            {
+                                title: "Other Procedures",
+                                treatments: [
+                                    { name: "Gum Surgery", price: 25000 },
+                                    { name: "Mouth Guard", price: 8000 },
+                                ],
+                            },
+                            {
+                                title: "Orthodontics",
+                                treatments: [
+                                    { name: "Braces - Metal", price: 75000 },
+                                    { name: "Clear Aligners (Invisalign)", price: 150000 },
+                                ],
+                            },
+                        ]
                     },
                     {
                         _id: 2,
                         Pname: "Everwhite Dental",
                         location: "Colombo, Western Province",
+                        description: "Your Smile, Our Priority – World-Class Dental Care in the Heart of Colombo",
+                        address: "20 Galle Road, Colombo 03, Sri Lanka",
+                        email: "info@everwhite.lk",
+                        reviews: 227,
                         rating: 4.8,
-                        image: cardImage
+                        about: "Everwhite Dental Centre is a leading dental clinic in Colombo, Sri Lanka, dedicated to providing exceptional dental care to both local and international patients. Established in 2005, we combine cutting-edge technology with a compassionate approach, ensuring a comfortable and effective treatment experience. Our mission is to make high-quality, affordable dental care accessible to everyone.",
+                        image: cardImage,
+                        treatments: [
+                            {
+                                title: "Implant Procedures",
+                                treatments: [
+                                    { name: "Single Tooth Implant", price: 60000 },
+                                    { name: "All-on-4 Implants", price: 250000 },
+                                ],
+                            },
+                            {
+                                title: "Crowns/Veneers",
+                                treatments: [
+                                    { name: "Porcelain Crown", price: 15000 },
+                                    { name: "Ceramic Veneer", price: 18000 },
+                                ],
+                            },
+                            {
+                                title: "Dentures",
+                                treatments: [
+                                    { name: "Complete Denture", price: 35000 },
+                                    { name: "Partial Denture", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Root Canal Treatment",
+                                treatments: [
+                                    { name: "Anterior Tooth", price: 10000 },
+                                    { name: "Molar Tooth", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Cleaning, Whitening, Filling & Extractions",
+                                treatments: [
+                                    { name: "Teeth Cleaning", price: 3000 },
+                                    { name: "Teeth Whitening", price: 5000 },
+                                    { name: "Tooth Filling", price: 2500 },
+                                    { name: "Tooth Extraction", price: 3500 },
+                                ],
+                            },
+                            {
+                                title: "Diagnostics",
+                                treatments: [
+                                    { name: "X-Ray (Single)", price: 1500 },
+                                    { name: "Full Mouth X-Ray", price: 5000 },
+                                ],
+                            },
+                            {
+                                title: "Other Procedures",
+                                treatments: [
+                                    { name: "Gum Surgery", price: 25000 },
+                                    { name: "Mouth Guard", price: 8000 },
+                                ],
+                            },
+                            {
+                                title: "Orthodontics",
+                                treatments: [
+                                    { name: "Braces - Metal", price: 75000 },
+                                    { name: "Clear Aligners (Invisalign)", price: 150000 },
+                                ],
+                            },
+                        ]
                     },
                     {
                         _id: 3,
                         Pname: "Golden Tooth Clinic",
                         location: "Colombo, Western Province",
+                        description: "Your Smile, Our Priority – World-Class Dental Care in the Heart of Colombo",
+                        address: "35 Galle Road, Colombo 03, Sri Lanka",
+                        email: "info@goldentooth.lk",
+                        reviews: 207,
                         rating: 4.6,
-                        image: cardImage
+                        about: "Golden Tooth Clinic Centre is a leading dental clinic in Colombo, Sri Lanka, dedicated to providing exceptional dental care to both local and international patients. Established in 2005, we combine cutting-edge technology with a compassionate approach, ensuring a comfortable and effective treatment experience. Our mission is to make high-quality, affordable dental care accessible to everyone.",
+                        image: cardImage,
+                        treatments: [
+                            {
+                                title: "Implant Procedures",
+                                treatments: [
+                                    { name: "Single Tooth Implant", price: 60000 },
+                                    { name: "All-on-4 Implants", price: 250000 },
+                                ],
+                            },
+                            {
+                                title: "Crowns/Veneers",
+                                treatments: [
+                                    { name: "Porcelain Crown", price: 15000 },
+                                    { name: "Ceramic Veneer", price: 18000 },
+                                ],
+                            },
+                            {
+                                title: "Dentures",
+                                treatments: [
+                                    { name: "Complete Denture", price: 35000 },
+                                    { name: "Partial Denture", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Root Canal Treatment",
+                                treatments: [
+                                    { name: "Anterior Tooth", price: 10000 },
+                                    { name: "Molar Tooth", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Cleaning, Whitening, Filling & Extractions",
+                                treatments: [
+                                    { name: "Teeth Cleaning", price: 3000 },
+                                    { name: "Teeth Whitening", price: 5000 },
+                                    { name: "Tooth Filling", price: 2500 },
+                                    { name: "Tooth Extraction", price: 3500 },
+                                ],
+                            },
+                            {
+                                title: "Diagnostics",
+                                treatments: [
+                                    { name: "X-Ray (Single)", price: 1500 },
+                                    { name: "Full Mouth X-Ray", price: 5000 },
+                                ],
+                            },
+                            {
+                                title: "Other Procedures",
+                                treatments: [
+                                    { name: "Gum Surgery", price: 25000 },
+                                    { name: "Mouth Guard", price: 8000 },
+                                ],
+                            },
+                            {
+                                title: "Orthodontics",
+                                treatments: [
+                                    { name: "Braces - Metal", price: 75000 },
+                                    { name: "Clear Aligners (Invisalign)", price: 150000 },
+                                ],
+                            },
+                        ]
                     },
                     {
                         _id: 4,
                         Pname: "City Dental Clinic",
                         location: "Colombo, Western Province",
+                        description: "Your Smile, Our Priority – World-Class Dental Care in the Heart of Colombo",
+                        address: "50 Galle Road, Colombo 03, Sri Lanka",
+                        email: "info@citydental.lk",
+                        reviews: 247,
                         rating: 4.7,
-                        image: cardImage
+                        about: "City Dental Clinic Dental Centre is a leading dental clinic in Colombo, Sri Lanka, dedicated to providing exceptional dental care to both local and international patients. Established in 2005, we combine cutting-edge technology with a compassionate approach, ensuring a comfortable and effective treatment experience. Our mission is to make high-quality, affordable dental care accessible to everyone.",
+                        image: cardImage,
+                        treatments: [
+                            {
+                                title: "Implant Procedures",
+                                treatments: [
+                                    { name: "Single Tooth Implant", price: 60000 },
+                                    { name: "All-on-4 Implants", price: 250000 },
+                                ],
+                            },
+                            {
+                                title: "Crowns/Veneers",
+                                treatments: [
+                                    { name: "Porcelain Crown", price: 15000 },
+                                    { name: "Ceramic Veneer", price: 18000 },
+                                ],
+                            },
+                            {
+                                title: "Dentures",
+                                treatments: [
+                                    { name: "Complete Denture", price: 35000 },
+                                    { name: "Partial Denture", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Root Canal Treatment",
+                                treatments: [
+                                    { name: "Anterior Tooth", price: 10000 },
+                                    { name: "Molar Tooth", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Cleaning, Whitening, Filling & Extractions",
+                                treatments: [
+                                    { name: "Teeth Cleaning", price: 3000 },
+                                    { name: "Teeth Whitening", price: 5000 },
+                                    { name: "Tooth Filling", price: 2500 },
+                                    { name: "Tooth Extraction", price: 3500 },
+                                ],
+                            },
+                            {
+                                title: "Diagnostics",
+                                treatments: [
+                                    { name: "X-Ray (Single)", price: 1500 },
+                                    { name: "Full Mouth X-Ray", price: 5000 },
+                                ],
+                            },
+                            {
+                                title: "Other Procedures",
+                                treatments: [
+                                    { name: "Gum Surgery", price: 25000 },
+                                    { name: "Mouth Guard", price: 8000 },
+                                ],
+                            },
+                            {
+                                title: "Orthodontics",
+                                treatments: [
+                                    { name: "Braces - Metal", price: 75000 },
+                                    { name: "Clear Aligners (Invisalign)", price: 150000 },
+                                ],
+                            },
+                        ]
                     },
                     {
                         _id: 5,
                         Pname: "Bright Dental Centre",
                         location: "Colombo, Western Province",
+                        description: "Your Smile, Our Priority – World-Class Dental Care in the Heart of Colombo",
+                        address: "10 Galle Road, Colombo 03, Sri Lanka",
+                        email: "info@brightdental.lk",
+                        reviews: 147,
                         rating: 4.9,
-                        image: cardImage
+                        about: "Bright Dental Centre is a leading dental clinic in Colombo, Sri Lanka, dedicated to providing exceptional dental care to both local and international patients. Established in 2005, we combine cutting-edge technology with a compassionate approach, ensuring a comfortable and effective treatment experience. Our mission is to make high-quality, affordable dental care accessible to everyone.",
+                        image: cardImage,
+                        treatments: [
+                            {
+                                title: "Implant Procedures",
+                                treatments: [
+                                    { name: "Single Tooth Implant", price: 60000 },
+                                    { name: "All-on-4 Implants", price: 250000 },
+                                ],
+                            },
+                            {
+                                title: "Crowns/Veneers",
+                                treatments: [
+                                    { name: "Porcelain Crown", price: 15000 },
+                                    { name: "Ceramic Veneer", price: 18000 },
+                                ],
+                            },
+                            {
+                                title: "Dentures",
+                                treatments: [
+                                    { name: "Complete Denture", price: 35000 },
+                                    { name: "Partial Denture", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Root Canal Treatment",
+                                treatments: [
+                                    { name: "Anterior Tooth", price: 10000 },
+                                    { name: "Molar Tooth", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Cleaning, Whitening, Filling & Extractions",
+                                treatments: [
+                                    { name: "Teeth Cleaning", price: 3000 },
+                                    { name: "Teeth Whitening", price: 5000 },
+                                    { name: "Tooth Filling", price: 2500 },
+                                    { name: "Tooth Extraction", price: 3500 },
+                                ],
+                            },
+                            {
+                                title: "Diagnostics",
+                                treatments: [
+                                    { name: "X-Ray (Single)", price: 1500 },
+                                    { name: "Full Mouth X-Ray", price: 5000 },
+                                ],
+                            },
+                            {
+                                title: "Other Procedures",
+                                treatments: [
+                                    { name: "Gum Surgery", price: 25000 },
+                                    { name: "Mouth Guard", price: 8000 },
+                                ],
+                            },
+                            {
+                                title: "Orthodontics",
+                                treatments: [
+                                    { name: "Braces - Metal", price: 75000 },
+                                    { name: "Clear Aligners (Invisalign)", price: 150000 },
+                                ],
+                            },
+                        ]
                     },
                     {
                         _id: 6,
                         Pname: "Dental House",
                         location: "Colombo, Western Province",
+                        description: "Your Smile, Our Priority – World-Class Dental Care in the Heart of Colombo",
+                        address: "13 Galle Road, Colombo 03, Sri Lanka",
+                        email: "info@dentalhouse.lk",
+                        reviews: 117,
                         rating: 4.9,
-                        image: cardImage
+                        about: "Dental House Dental Centre is a leading dental clinic in Colombo, Sri Lanka, dedicated to providing exceptional dental care to both local and international patients. Established in 2005, we combine cutting-edge technology with a compassionate approach, ensuring a comfortable and effective treatment experience. Our mission is to make high-quality, affordable dental care accessible to everyone.",
+                        image: cardImage,
+                        treatments: [
+                            {
+                                title: "Implant Procedures",
+                                treatments: [
+                                    { name: "Single Tooth Implant", price: 60000 },
+                                    { name: "All-on-4 Implants", price: 250000 },
+                                ],
+                            },
+                            {
+                                title: "Crowns/Veneers",
+                                treatments: [
+                                    { name: "Porcelain Crown", price: 15000 },
+                                    { name: "Ceramic Veneer", price: 18000 },
+                                ],
+                            },
+                            {
+                                title: "Dentures",
+                                treatments: [
+                                    { name: "Complete Denture", price: 35000 },
+                                    { name: "Partial Denture", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Root Canal Treatment",
+                                treatments: [
+                                    { name: "Anterior Tooth", price: 10000 },
+                                    { name: "Molar Tooth", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Cleaning, Whitening, Filling & Extractions",
+                                treatments: [
+                                    { name: "Teeth Cleaning", price: 3000 },
+                                    { name: "Teeth Whitening", price: 5000 },
+                                    { name: "Tooth Filling", price: 2500 },
+                                    { name: "Tooth Extraction", price: 3500 },
+                                ],
+                            },
+                            {
+                                title: "Diagnostics",
+                                treatments: [
+                                    { name: "X-Ray (Single)", price: 1500 },
+                                    { name: "Full Mouth X-Ray", price: 5000 },
+                                ],
+                            },
+                            {
+                                title: "Other Procedures",
+                                treatments: [
+                                    { name: "Gum Surgery", price: 25000 },
+                                    { name: "Mouth Guard", price: 8000 },
+                                ],
+                            },
+                            {
+                                title: "Orthodontics",
+                                treatments: [
+                                    { name: "Braces - Metal", price: 75000 },
+                                    { name: "Clear Aligners (Invisalign)", price: 150000 },
+                                ],
+                            },
+                        ]
                     },
                     {
                         _id: 7,
                         Pname: "Everwhite Dental",
                         location: "Colombo, Western Province",
+                        description: "Your Smile, Our Priority – World-Class Dental Care in the Heart of Colombo",
+                        address: "10 Galle Road, Colombo 08, Sri Lanka",
+                        email: "info@everwhitedental.lk",
+                        reviews: 147,
                         rating: 4.7,
-                        image: cardImage
+                        about: "Everwhite Dental Centre is a leading dental clinic in Colombo, Sri Lanka, dedicated to providing exceptional dental care to both local and international patients. Established in 2005, we combine cutting-edge technology with a compassionate approach, ensuring a comfortable and effective treatment experience. Our mission is to make high-quality, affordable dental care accessible to everyone.",
+                        image: cardImage,
+                        treatments: [
+                            {
+                                title: "Implant Procedures",
+                                treatments: [
+                                    { name: "Single Tooth Implant", price: 60000 },
+                                    { name: "All-on-4 Implants", price: 250000 },
+                                ],
+                            },
+                            {
+                                title: "Crowns/Veneers",
+                                treatments: [
+                                    { name: "Porcelain Crown", price: 15000 },
+                                    { name: "Ceramic Veneer", price: 18000 },
+                                ],
+                            },
+                            {
+                                title: "Dentures",
+                                treatments: [
+                                    { name: "Complete Denture", price: 35000 },
+                                    { name: "Partial Denture", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Root Canal Treatment",
+                                treatments: [
+                                    { name: "Anterior Tooth", price: 10000 },
+                                    { name: "Molar Tooth", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Cleaning, Whitening, Filling & Extractions",
+                                treatments: [
+                                    { name: "Teeth Cleaning", price: 3000 },
+                                    { name: "Teeth Whitening", price: 5000 },
+                                    { name: "Tooth Filling", price: 2500 },
+                                    { name: "Tooth Extraction", price: 3500 },
+                                ],
+                            },
+                            {
+                                title: "Diagnostics",
+                                treatments: [
+                                    { name: "X-Ray (Single)", price: 1500 },
+                                    { name: "Full Mouth X-Ray", price: 5000 },
+                                ],
+                            },
+                            {
+                                title: "Other Procedures",
+                                treatments: [
+                                    { name: "Gum Surgery", price: 25000 },
+                                    { name: "Mouth Guard", price: 8000 },
+                                ],
+                            },
+                            {
+                                title: "Orthodontics",
+                                treatments: [
+                                    { name: "Braces - Metal", price: 75000 },
+                                    { name: "Clear Aligners (Invisalign)", price: 150000 },
+                                ],
+                            },
+                        ]
                     },
                     {
                         _id: 8,
                         Pname: "Smile Zone Clinic",
                         location: "Colombo, Western Province",
+                        description: "Your Smile, Our Priority – World-Class Dental Care in the Heart of Colombo",
+                        address: "10 Galle Road, Colombo 03, Sri Lanka",
+                        email: "info@smilezone.lk",
+                        reviews: 147,
                         rating: 4.8,
-                        image: cardImage
+                        about: "Smile Zone Dental Centre is a leading dental clinic in Colombo, Sri Lanka, dedicated to providing exceptional dental care to both local and international patients. Established in 2005, we combine cutting-edge technology with a compassionate approach, ensuring a comfortable and effective treatment experience. Our mission is to make high-quality, affordable dental care accessible to everyone.",
+                        image: cardImage,
+                        treatments: [
+                            {
+                                title: "Implant Procedures",
+                                treatments: [
+                                    { name: "Single Tooth Implant", price: 60000 },
+                                    { name: "All-on-4 Implants", price: 250000 },
+                                ],
+                            },
+                            {
+                                title: "Crowns/Veneers",
+                                treatments: [
+                                    { name: "Porcelain Crown", price: 15000 },
+                                    { name: "Ceramic Veneer", price: 18000 },
+                                ],
+                            },
+                            {
+                                title: "Dentures",
+                                treatments: [
+                                    { name: "Complete Denture", price: 35000 },
+                                    { name: "Partial Denture", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Root Canal Treatment",
+                                treatments: [
+                                    { name: "Anterior Tooth", price: 10000 },
+                                    { name: "Molar Tooth", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Cleaning, Whitening, Filling & Extractions",
+                                treatments: [
+                                    { name: "Teeth Cleaning", price: 3000 },
+                                    { name: "Teeth Whitening", price: 5000 },
+                                    { name: "Tooth Filling", price: 2500 },
+                                    { name: "Tooth Extraction", price: 3500 },
+                                ],
+                            },
+                            {
+                                title: "Diagnostics",
+                                treatments: [
+                                    { name: "X-Ray (Single)", price: 1500 },
+                                    { name: "Full Mouth X-Ray", price: 5000 },
+                                ],
+                            },
+                            {
+                                title: "Other Procedures",
+                                treatments: [
+                                    { name: "Gum Surgery", price: 25000 },
+                                    { name: "Mouth Guard", price: 8000 },
+                                ],
+                            },
+                            {
+                                title: "Orthodontics",
+                                treatments: [
+                                    { name: "Braces - Metal", price: 75000 },
+                                    { name: "Clear Aligners (Invisalign)", price: 150000 },
+                                ],
+                            },
+                        ]
                     },
                     {
                         _id: 9,
                         Pname: "City Dental Clinic",
                         location: "Colombo, Western Province",
+                        description: "Your Smile, Our Priority – World-Class Dental Care in the Heart of Colombo",
+                        address: "01 Galle Road, Colombo 05, Sri Lanka",
+                        email: "info@citydental.lk",
+                        reviews: 147,
                         rating: 4.7,
-                        image: cardImage
+                        about: "City Dental Clinic Centre is a leading dental clinic in Colombo, Sri Lanka, dedicated to providing exceptional dental care to both local and international patients. Established in 2005, we combine cutting-edge technology with a compassionate approach, ensuring a comfortable and effective treatment experience. Our mission is to make high-quality, affordable dental care accessible to everyone.",
+                        image: cardImage,
+                        treatments: [
+                            {
+                                title: "Implant Procedures",
+                                treatments: [
+                                    { name: "Single Tooth Implant", price: 60000 },
+                                    { name: "All-on-4 Implants", price: 250000 },
+                                ],
+                            },
+                            {
+                                title: "Crowns/Veneers",
+                                treatments: [
+                                    { name: "Porcelain Crown", price: 15000 },
+                                    { name: "Ceramic Veneer", price: 18000 },
+                                ],
+                            },
+                            {
+                                title: "Dentures",
+                                treatments: [
+                                    { name: "Complete Denture", price: 35000 },
+                                    { name: "Partial Denture", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Root Canal Treatment",
+                                treatments: [
+                                    { name: "Anterior Tooth", price: 10000 },
+                                    { name: "Molar Tooth", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Cleaning, Whitening, Filling & Extractions",
+                                treatments: [
+                                    { name: "Teeth Cleaning", price: 3000 },
+                                    { name: "Teeth Whitening", price: 5000 },
+                                    { name: "Tooth Filling", price: 2500 },
+                                    { name: "Tooth Extraction", price: 3500 },
+                                ],
+                            },
+                            {
+                                title: "Diagnostics",
+                                treatments: [
+                                    { name: "X-Ray (Single)", price: 1500 },
+                                    { name: "Full Mouth X-Ray", price: 5000 },
+                                ],
+                            },
+                            {
+                                title: "Other Procedures",
+                                treatments: [
+                                    { name: "Gum Surgery", price: 25000 },
+                                    { name: "Mouth Guard", price: 8000 },
+                                ],
+                            },
+                            {
+                                title: "Orthodontics",
+                                treatments: [
+                                    { name: "Braces - Metal", price: 75000 },
+                                    { name: "Clear Aligners (Invisalign)", price: 150000 },
+                                ],
+                            },
+                        ]
                     },
                     {
                         _id: 10,
                         Pname: "CityCare Dental",
                         location: "Colombo, Western Province",
+                        description: "Your Smile, Our Priority – World-Class Dental Care in the Heart of Colombo",
+                        address: "40 Galle Road, Colombo 12, Sri Lanka",
+                        email: "info@citycare.lk",
+                        reviews: 157,
                         rating: 4.8,
-                        image: cardImage
+                        about: "CityCare Dental Centre is a leading dental clinic in Colombo, Sri Lanka, dedicated to providing exceptional dental care to both local and international patients. Established in 2005, we combine cutting-edge technology with a compassionate approach, ensuring a comfortable and effective treatment experience. Our mission is to make high-quality, affordable dental care accessible to everyone.",
+                        image: cardImage,
+                        treatments: [
+                            {
+                                title: "Implant Procedures",
+                                treatments: [
+                                    { name: "Single Tooth Implant", price: 60000 },
+                                    { name: "All-on-4 Implants", price: 250000 },
+                                ],
+                            },
+                            {
+                                title: "Crowns/Veneers",
+                                treatments: [
+                                    { name: "Porcelain Crown", price: 15000 },
+                                    { name: "Ceramic Veneer", price: 18000 },
+                                ],
+                            },
+                            {
+                                title: "Dentures",
+                                treatments: [
+                                    { name: "Complete Denture", price: 35000 },
+                                    { name: "Partial Denture", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Root Canal Treatment",
+                                treatments: [
+                                    { name: "Anterior Tooth", price: 10000 },
+                                    { name: "Molar Tooth", price: 15000 },
+                                ],
+                            },
+                            {
+                                title: "Cleaning, Whitening, Filling & Extractions",
+                                treatments: [
+                                    { name: "Teeth Cleaning", price: 3000 },
+                                    { name: "Teeth Whitening", price: 5000 },
+                                    { name: "Tooth Filling", price: 2500 },
+                                    { name: "Tooth Extraction", price: 3500 },
+                                ],
+                            },
+                            {
+                                title: "Diagnostics",
+                                treatments: [
+                                    { name: "X-Ray (Single)", price: 1500 },
+                                    { name: "Full Mouth X-Ray", price: 5000 },
+                                ],
+                            },
+                            {
+                                title: "Other Procedures",
+                                treatments: [
+                                    { name: "Gum Surgery", price: 25000 },
+                                    { name: "Mouth Guard", price: 8000 },
+                                ],
+                            },
+                            {
+                                title: "Orthodontics",
+                                treatments: [
+                                    { name: "Braces - Metal", price: 75000 },
+                                    { name: "Clear Aligners (Invisalign)", price: 150000 },
+                                ],
+                            },
+                        ]
                     }
                 ]
 
@@ -682,7 +1334,7 @@ function Location() {
                                             {openDistricts[key] && district.clinics.length > 0 && (
                                                 <div className="clinic_cards">
                                                     {district.clinics.map((clinic, j) => (
-                                                        <div className="clinic_card" key={clinic._id}>
+                                                        <Link className="clinic_card" key={clinic._id} onClick={() => window.scrollTo(0, 0)} to={`/clinic/${clinic._id}`} state={{ clinic }}>
                                                             <div className="image_content">
                                                                 <img
                                                                     src={clinic.image || cardImage}
@@ -699,7 +1351,7 @@ function Location() {
                                                                     <p className="clinic_rating"><IoMdStar /> {clinic.rating}</p>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </Link>
                                                     ))}
                                                 </div>
                                             )}

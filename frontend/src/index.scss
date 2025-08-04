@@ -2,6 +2,9 @@
 @import "./styles/variables";
 @import "./styles/colors";
 
+@import "@fontsource/be-vietnam-pro"; // Defaults to weight 400
+@import "@fontsource/be-vietnam-pro/400.css"; // Specify weight
+@import "@fontsource/be-vietnam-pro/400-italic.css"; // Specify weight and style
 
 body,
 html {
@@ -9,11 +12,13 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
-  font-family: inter;
+  font-family: "Be Vietnam Pro";
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-size: contain;
   height: 100%;
+  scroll-behavior: smooth;
+
 }
 
 * {
@@ -28,48 +33,60 @@ html {
 ::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
   color: transparent;
 }
+
 p {
   margin: 0;
 }
+
 a {
   text-decoration: none !important;
 }
+
 svg {
   cursor: pointer;
 }
+
 button {
   cursor: pointer;
   border: none;
 }
+
 #system {
   width: 100%;
   height: 100%;
 }
+
 ul {
   list-style: none;
 }
+
 li {
   cursor: pointer;
   user-select: none;
 }
+
 input,
 textarea,
 select {
   outline: none;
 }
+
 select {
   cursor: pointer;
 }
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 .endDot::after {
   content: "*";
   color: red;
 }
+
 table {
   display: table;
   width: 100%;
@@ -223,7 +240,7 @@ table {
 //           text-transform: uppercase;
 //           font-weight: 400;
 //           background-color: transparent;
-         
+
 //           svg {
 //             font-size: 20px;
 //           }

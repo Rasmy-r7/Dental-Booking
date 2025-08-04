@@ -6,6 +6,7 @@ import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Landing from './pages/landing/Landing';
 import Location from './pages/location/Location';
+import Clinic from './pages/clinic/Clinic';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path='login' element={<Login />} />
             <Route path='location' element={<Location />} />
+            <Route path='clinic/:clinicId' element={<Clinic />} />
 
           </Route>
 
