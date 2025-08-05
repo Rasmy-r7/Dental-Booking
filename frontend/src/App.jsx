@@ -7,6 +7,7 @@ import Login from './pages/login/Login';
 import Landing from './pages/landing/Landing';
 import Location from './pages/location/Location';
 import Clinic from './pages/clinic/Clinic';
+import Profile from './pages/profile/Profile';
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
             <Route path='login' element={<Login />} />
             <Route path='location' element={<Location />} />
             <Route path='clinic/:clinicId' element={<Clinic />} />
+            <Route path='clinic/:clinicId' element={<Clinic />} />
+            <Route path='profile' element={<Profile />} />
 
           </Route>
 

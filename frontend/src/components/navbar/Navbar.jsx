@@ -31,7 +31,7 @@ function Navbar() {
             <CiSearch />
           </div>
         </div>
-        <button className='location_btn' onClick={()=> navigate("location")}>
+        <button className='location_btn' onClick={() => navigate("location")}>
           <img src={locationLogo} alt="" className='location_logo' />
           Locations
         </button>
@@ -42,13 +42,13 @@ function Navbar() {
 
         <div className='menu_icon'>
           <CiSearch className="nav_search_icon" />
-          <IoMenu onClick={() => setFilter(prev => !prev)} />
+          <IoMenu onClick={() => { setFilter(prev => !prev); window.scrollTo(0, 0) }} />
         </div>
 
         <div className='Navbar_icon'>
           <CiHeart />
           <GrLanguage />
-          <GoPerson />
+          <GoPerson onClick={() => navigate("profile")} />
         </div>
 
       </div>
@@ -75,7 +75,7 @@ function Navbar() {
             <div className="Navbar_icon">
               <CiHeart />
               <GrLanguage />
-              <GoPerson />
+              <GoPerson onClick={() => navigate("profile")} />
             </div>
           </div>
 

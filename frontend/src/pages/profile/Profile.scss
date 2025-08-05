@@ -1,0 +1,529 @@
+@import '../../styles/colors';
+@import '../../styles/media';
+@import '../../styles/variables';
+
+
+.profile_container {
+    padding: 42px 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+    width: 100%;
+
+    @include tablet {
+        flex-direction: column;
+        padding: 24px 32px;
+        gap: 24px;
+    }
+
+    @include mobile {
+        flex-direction: column;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .profile_top {
+        width: 306px;
+        height: auto;
+        padding: 24px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+
+
+        @include both {
+            width: 100%;
+        }
+
+        @include tablet {
+            padding: 0 24px;
+            flex-direction: row;
+            box-shadow: none;
+            align-items: center;
+
+        }
+
+
+        .profile_info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+
+
+            .profile_img {
+                width: 112px;
+                height: 112px;
+                border-radius: 116px;
+                object-fit: cover;
+
+
+            }
+
+            .profile_name {
+                font-size: 22px;
+                font-weight: 600;
+                color: $primary-text;
+                display: block;
+
+                @include tablet {
+                    display: none;
+                }
+            }
+        }
+
+        .profile_contacts_btn {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            @include tablet {
+                flex: 1;
+                gap: 8px;
+            }
+
+
+            .profile_contacts {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                font-size: 14px;
+                font-weight: 400;
+                color: $primary-text;
+
+                .profile_name {
+                    display: none;
+
+                    @include tablet {
+                        display: block;
+                        font-size: 22px;
+                        font-weight: 600;
+                        color: $primary-text;
+                    }
+                }
+
+                .contact_detail {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    svg {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .edit_btn {
+                width: 100%;
+                padding: 12px;
+                background-color: $neutral-2;
+                color: $primary-text;
+                font-size: 16px;
+                font-weight: 500;
+                border: none;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+
+                @include tablet {
+                    padding: 10px 12px;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+
+                svg {
+                    font-size: 24px;
+
+                    @include tablet {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .profile_content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 24px;
+        width: 958px;
+
+        @include both {
+            width: 100%;
+        }
+
+
+        .tab_nav {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-bottom: 1px solid $border;
+
+            button {
+                font-size: 16px;
+                font-weight: 500;
+                color: $secondary-text;
+                background-color: transparent;
+                padding: 8px 16px;
+                border: none;
+                cursor: pointer;
+
+                &.active {
+                    color: $primary-text;
+                    border-bottom: 3px solid black;
+                }
+            }
+        }
+
+        .tab_content {
+            .appointments_tab {
+                width: 100%;
+
+                @include both {
+                    width: 100%;
+                }
+
+                .appointment_filters {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 12px;
+                    margin-bottom: 16px;
+
+                    @include mobile {
+                        align-items: flex-start;
+                        flex-direction: column;
+                    }
+
+                    .tab_title {
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: $primary-text;
+                    }
+
+                    .filter_btn {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+
+                        button {
+                            padding: 8px 16px;
+                            border: 1px solid $border;
+                            border-radius: 28px;
+                            background-color: transparent;
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+                            font-size: 16px;
+                            font-weight: 600;
+                            cursor: pointer;
+                            color: $secondary-text;
+
+                            svg {
+                                display: none;
+                                font-size: 20px;
+                                transition: opacity 0.3s ease;
+                            }
+
+                            .show {
+                                display: block;
+                                opacity: 1;
+                            }
+
+                            &.selected {
+                                background-color: $primary-500;
+                                color: $accent;
+
+                                .show {
+                                    color: $accent;
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+            .appointment_list {
+
+                width: 100%;
+
+                @include mobile {
+                    width: 100%;
+                }
+
+                .appointment_card_wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
+
+                    .appointment_card {
+                        background-color: $accent;
+                        border: 1px solid $border;
+                        border-radius: 16px;
+                        padding: 24px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        gap: 24px;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+
+
+                        .appointment_card_top {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 16px;
+
+                            .appointment_image_wrapper {
+                                position: relative;
+                                width: 180px;
+                                height: 180px;
+                                display: block;
+
+                                @include mobile {
+                                    display: none;
+                                }
+
+                                .appointment_img {
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 16px;
+                                    object-fit: cover;
+                                }
+
+                                .favorite_icon {
+                                    position: absolute;
+                                    top: 8px;
+                                    right: 8px;
+                                    color: $secondary-text;
+                                    font-size: 24px;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            .appointment_info {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 8px;
+                                font-size: 14px;
+
+                                .id_name_type {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 8px;
+
+                                    .appointment_id {
+                                        font-weight: 400;
+                                        font-size: 14px;
+                                        color: $secondary-text;
+                                    }
+
+                                    .clinic_name {
+                                        font-size: 18px;
+                                        font-weight: 500;
+                                        color: $primary-text;
+                                    }
+
+                                    .treatment_type {
+                                        font-weight: 400;
+                                        font-size: 18px;
+                                        color: $secondary-text;
+                                    }
+
+                                }
+
+                                .name_date_time_location {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 8px;
+
+                                    .doctor_name,
+                                    .appointment_date,
+                                    .appointment_time,
+                                    .appointment_location {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 8px;
+                                        font-size: 14px;
+                                        font-weight: 400;
+                                        color: $primary-text;
+
+                                        svg {
+                                            color: $secondary-text;
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+
+
+                            }
+                        }
+
+                        .appointmentUp_actions {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 8px;
+                            justify-content: center;
+                            width: 173px;
+
+                            @include mobile {
+                                display: none;
+                            }
+
+                            .btn {
+                                width: 100%;
+                                padding: 14px 24px;
+                                border: none;
+                                border-radius: 8px;
+                                cursor: pointer;
+                                font-size: 16px;
+                                font-weight: 500;
+                                color: $primary-text;
+                                transition: background-color 0.3s ease;
+                                background-color: $neutral-2;
+
+
+
+
+                            }
+                        }
+
+                        .appointmentPast_actions {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 8px;
+                            justify-content: center;
+                            width: 173px;
+
+                            @include mobile {
+                                display: none;
+                            }
+
+                            .btn {
+                                width: 100%;
+                                padding: 14px 24px;
+                                border: none;
+                                border-radius: 8px;
+                                cursor: pointer;
+                                font-size: 16px;
+                                font-weight: 500;
+                                color: $primary-text;
+                                transition: background-color 0.3s ease;
+                                background-color: $neutral-2;
+
+                                &.book_ag {
+                                    background-color: $primary-500;
+                                    color: $accent;
+                                }
+
+                            }
+                        }
+
+
+                    }
+                }
+
+            }
+
+            .favorites_tab {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                .tab_title {
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: $primary-text;
+                }
+
+                .favorit_cards_main {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 24px;
+                    // @include tablet {
+                    //     grid-template-columns: repeat(3, 1fr);
+                    // }
+
+                    @include mobile {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 16px;
+                    }
+
+                    .favorit_card {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                        overflow: hidden;
+
+                        .image_content {
+                            position: relative;
+                            width: 100%;
+
+                            .heart_icon {
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                                font-size: 22px;
+                                color: $secondary-text;
+                                z-index: 1;
+                            }
+
+                            .favorit_card_image {
+                                width: 100%;
+                                border-radius: 16px;
+                                aspect-ratio: 1 / 1;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .favorit_card_info {
+
+                            .favorit_card_name {
+                                font-size: 16px;
+                                font-weight: 500;
+                                color: $primary-text;
+
+                                @include mobile {
+                                    font-size: 14px;
+                                }
+                            }
+
+                            .favorit_card_details {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                font-size: 14px;
+                                font-weight: 400;
+                                color: $secondary-text;
+                                margin-top: 4px;
+
+                                @include mobile {
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    gap: 4px;
+                                }
+
+                                .favorit_card_rating {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
