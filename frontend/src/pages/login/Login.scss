@@ -1,0 +1,236 @@
+@import '../../styles/colors';
+@import '../../styles/media';
+@import '../../styles/variables';
+
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $accent;
+    min-height: 100vh;
+
+    .success_message {
+        background-color: $accent;
+        border-radius: 24px;
+        padding: 48px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+        border: 1px solid $border;
+        width: 100%;
+        max-width: 504px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 12px;
+
+
+        .success_icon {
+            margin: auto;
+            font-size: 42px;
+            color: rgba(20, 174, 92, 1);
+        }
+
+        .success_title {
+            font-weight: 600;
+            font-size: 22px;
+            color: $primary-text;
+        }
+
+        .success_text {
+            font-weight: 400;
+            font-size: 14px;
+            color: $secondary-text;
+        }
+
+
+
+    }
+
+    .login_container {
+        background-color: $accent;
+        border-radius: 16px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        max-width: 504px;
+        display: flex;
+        flex-direction: column;
+
+        .login_header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px;
+            border-bottom: 1px solid $border;
+
+            .back_icon,
+            .close_icon {
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .login_title {
+                font-size: 16px;
+                font-weight: 500;
+                text-align: center;
+                flex-grow: 1;
+            }
+        }
+
+        .login_body {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding: 24px;
+
+            .login_welcome {
+                font-size: 20px;
+                font-weight: 600;
+                color: $primary-text;
+            }
+
+            .otp_number {
+                font-size: 16px;
+                font-weight: 400;
+                color: $primary-text;
+            }
+
+            .login_form {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                label {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: $secondary-text;
+                }
+
+                select,
+                input {
+                    padding: 16px;
+                    border: 1px solid $border;
+                    background-color: $neutral-2;
+                    border-radius: 4px;
+                    font-size: 14px;
+
+                    &:focus {
+                        border: 1px solid $border ;
+                        outline: none;
+                    }
+                }
+
+                .login_note {
+                    margin: 15px 0;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: $secondary-text;
+                }
+
+                .login_continue_btn {
+                    width: 100%;
+                    padding: 14px 24px;
+                    background-color: $primary-500;
+                    color: $accent;
+                    font-size: 16px;
+                    font-weight: 500;
+                    border: none;
+                    border-radius: 12px;
+                    transition: background 0.2s;
+
+                    &:hover {
+                        background-color: $primary-600;
+                    }
+                }
+
+                .resent_Verify {
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    gap: 16px;
+
+                    button {
+                        padding: 14px 24px;
+                        font-size: 16px;
+                        font-weight: 500;
+                        border: none;
+                        border-radius: 12px;
+
+                        &.veryfy_btn {
+                            background-color: $primary-500;
+                            color: $accent;
+                        }
+
+                        &.resent_btn {
+                            background-color: transparent;
+                            text-decoration: underline;
+                        }
+                    }
+
+
+                }
+            }
+
+            .toggle_account {
+                font-size: 14px;
+                color: #555;
+
+                span.toggle_link {
+                    margin-left: 6px;
+                    color: $primary-500;
+                    cursor: pointer;
+                    font-weight: 600;
+
+                    &:hover {
+                        color: $primary-700;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+
+            .login_divider {
+                display: flex;
+                align-items: center;
+
+                p {
+                    font-size: 12px;
+                    color: $secondary-text;
+                    font-weight: 400;
+                    padding: 10px 5px;
+                }
+
+                hr {
+                    flex-grow: 1;
+                    border-top: 1px solid $secondary-text;
+                }
+            }
+
+            .login_google_btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                padding: 12px;
+                background-color: $neutral-2;
+                border: none;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: 500;
+                color: $primary-text;
+                transition: all 0.2s;
+
+                svg {
+                    font-size: 24px;
+                }
+            }
+        }
+
+    }
+
+
+
+
+
+
+}

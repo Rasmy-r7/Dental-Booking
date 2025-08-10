@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <>
       <div className='navbar'>
-        <img src={logoBlack} alt="Logo" className="navbar_logo" />
+        <img src={logoBlack} alt="Logo" className="navbar_logo" onClick={() => navigate('/')} />
         <div className='navbar_filters'>
           <select className="navbar_select">
             <option>Location</option>
@@ -68,14 +68,14 @@ function Navbar() {
             </div>
 
             <button className="location_btn">
-              <img src={locationLogo} alt="" className="location_logo" />
+              <img src={locationLogo} alt="" className="location_logo" onClick={() => navigate("location")} />
               Locations
             </button>
 
             <div className="Navbar_icon">
               <CiHeart />
               <GrLanguage />
-              <GoPerson onClick={() => navigate("profile")} />
+              <GoPerson onClick={() => { navigate("profile"); setFilter(false) }} />
             </div>
           </div>
 

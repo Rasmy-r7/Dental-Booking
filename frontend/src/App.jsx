@@ -14,13 +14,14 @@ function App() {
   return (
     <>
       <BrowserRouter>
+
         <Routes>
+          <Route path='/login' element={<Login />} />
+
           <Route path="/" element={<CommonLayout />}>
             <Route element={<Landing />} />
             <Route index element={<Home />} />
-            <Route path='login' element={<Login />} />
             <Route path='location' element={<Location />} />
-            <Route path='clinic/:clinicId' element={<Clinic />} />
             <Route path='clinic/:clinicId' element={<Clinic />} />
             <Route path='profile' element={<Profile />} />
 

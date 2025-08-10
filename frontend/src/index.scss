@@ -18,7 +18,13 @@ html {
   background-size: contain;
   height: 100%;
   scroll-behavior: smooth;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 
+body::-webkit-scrollbar {
+  display: none;
 }
 
 * {

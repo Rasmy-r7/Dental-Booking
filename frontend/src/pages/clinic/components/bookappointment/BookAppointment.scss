@@ -1,0 +1,417 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/media';
+@import '../../../../styles/variables';
+
+.popup_card {
+  width: 724px;
+  background-color: $accent;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  // gap: 24px;
+
+  @include both {
+    max-height: 100%;
+    max-width: 100%;
+    overflow-y: auto;
+        padding: 12px;
+
+  }
+
+  .popup_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+
+    .popup_heading {
+      font-size: 16px;
+      font-weight: 500;
+      color: $primary-text;
+    }
+
+    .close_icon {
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .popup_body {
+
+    .dr_form {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .popup_intro {
+        font-size: 20px;
+        font-weight: 600;
+        color: $primary-text;
+      }
+
+      .popup_form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        label {
+          font-size: 16px;
+          font-weight: 500;
+          color: $secondary-text;
+        }
+
+        input,
+        select {
+          padding: 16px;
+          border: 1px solid $border;
+          border-radius: 4px;
+          font-size: 16px;
+        }
+      }
+
+      .selected_doctor_card {
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid $border;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+
+        .dr_profile {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          .team_img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+          }
+
+          .dr_name {
+            font-weight: 600;
+          }
+
+          .dr_qualifications {
+            font-size: 14px;
+            color: $secondary-text;
+          }
+        }
+      }
+
+      .popup_doctor_section {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        button {
+          width: fit-content;
+          padding: 11px 12px;
+          color: $primary-text;
+          background-color: $neutral-2;
+          border: none;
+          border-radius: 8px;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+
+      .popup_slot_info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        p:first-child {
+          font-size: 16px;
+          font-weight: 500;
+          color: $secondary-text;
+        }
+
+        p:last-child {
+          font-size: 16px;
+          font-weight: 400;
+          color: $primary-text;
+        }
+
+        .time_slot {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+
+          .slot_btn {
+            padding: 8px 16px;
+            border: 1px solid $border;
+            background-color: $accent;
+            border-radius: 8px;
+            color: $secondary-text;
+            font-size: 14px;
+            transition: 0.3s;
+
+            &:hover {
+              color: $primary-500;
+              border: 1px solid $primary-500;
+            }
+
+            &.active {
+              background-color: $primary-500;
+              color: $accent;
+              border: 1px solid $primary-500 ;
+            }
+
+          }
+        }
+
+      }
+    }
+
+
+    .dr_info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 0 24px;
+
+      .popup_intro {
+        font-size: 20px;
+        font-weight: 600;
+        color: $primary-text;
+      }
+
+      .dr_details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        width: 676px;
+
+        @include tablet {
+          width: 100%;
+        }
+
+        @include mobile {
+          width: 100%;
+          grid-template-columns: 1fr;
+        }
+
+        .dr_card {
+          border-radius: 16px;
+          padding: 16px;
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          &.selected {
+            border: 2px solid $primary-500;
+            background-color: $primary-50;
+          }
+
+          .dr_profile {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+            .team_img {
+              width: 72px;
+              height: 72px;
+              border-radius: 57px;
+              object-fit: cover;
+            }
+
+            .dr_detail {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+
+              .dr_name {
+                font-size: 18px;
+                font-weight: 500;
+                color: $primary-text;
+              }
+
+              .dr_qualifications {
+                font-size: 14px;
+                color: $secondary-text;
+                margin-top: 4px;
+              }
+            }
+
+          }
+
+          .dr_specialties,
+          .dr_languages {
+            display: flex;
+            gap: 16px;
+
+            .dr_icon {
+              font-size: 24px;
+              color: $secondary-text;
+            }
+
+            .dr_section_title {
+              font-size: 14px;
+              font-weight: 500;
+              color: $secondary-text;
+              margin-bottom: 4px;
+            }
+
+            .dr_text {
+              font-size: 14px;
+              font-weight: 400;
+              color: $primary-text;
+            }
+          }
+        }
+
+
+      }
+    }
+
+
+    .patient_info_form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 24px;
+      width: 100%;
+
+      .popup_intro {
+        font-size: 20px;
+        font-weight: 600;
+        color: $primary-text;
+      }
+
+      .popup_form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        label {
+          font-size: 16px;
+          font-weight: 500;
+          color: $secondary-text;
+        }
+
+        input,
+        select,
+        textarea {
+          padding: 16px;
+          border: 1px solid $border;
+          border-radius: 4px;
+          font-size: 16px;
+        }
+      }
+    }
+
+
+    .appointment_summary {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 24px;
+
+      .summary_title {
+        font-size: 20px;
+        font-weight: 600;
+        color: $primary-text;
+      }
+
+      .summary_details {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .summary_row {
+          display: flex;
+          gap: 16px;
+          align-items: center;
+
+          .summary_label {
+            font-size: 16px;
+            color: $secondary-text;
+            font-weight: 500;
+            width: 200px;
+
+            @include mobile{
+              width: 170px;
+            }
+          }
+
+          .summary_value {
+            font-weight: 500;
+            font-size: 16px;
+            color: $primary-text;
+          }
+        }
+
+      }
+
+
+    }
+
+
+
+
+  }
+
+  .popup_footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px;
+
+    button {
+      padding: 10px 24px;
+      // background-color: $primary;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+
+      &.next_step_btn {
+        background-color: $primary-500;
+      }
+
+    }
+
+    .dr_choose_btn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .back_choose {
+        background-color: $neutral-2;
+        color: $primary-text;
+      }
+
+      .next_choose {
+        background-color: $primary-500;
+      }
+    }
+
+    .confirm_footer {
+      display: flex;
+      gap: 16px;
+
+      button {
+        padding: 10px 24px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 500;
+
+
+      }
+
+      .back_choose {
+        background-color: $neutral-2;
+        color: $primary-text;
+      }
+
+      .submit_btn {
+        background-color: $primary-500;
+      }
+    }
+
+
+  }
+}

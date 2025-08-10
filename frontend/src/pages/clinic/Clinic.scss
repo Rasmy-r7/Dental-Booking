@@ -3,15 +3,36 @@
 @import '../../styles/variables';
 
 
+
+
 .clinic_page {
     width: 100%;
+    position: relative;
 
-    @include tablet {
-        padding: 24px 32px;
+    .overlay_blur {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(4px);
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 998;
+        overflow: auto;
     }
 
-    @include mobile {
-        padding: 16px;
+    .appointment_popup_overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+        box-sizing: border-box;
     }
 
     .clinic_nav {
@@ -20,6 +41,8 @@
         align-items: flex-end;
         background-color: $accent;
         border-bottom: 1px solid $border;
+        position: sticky;
+        top: 70px;
 
         @include tablet {
             padding: 16px;
@@ -35,7 +58,6 @@
             gap: 10px;
             list-style: none;
 
-
             li {
                 .clinic_tab {
                     padding: 12px;
@@ -47,7 +69,6 @@
 
                     &.active {
                         color: $primary-text;
-                        // border-bottom: 3px solid black;
                     }
                 }
             }
@@ -67,8 +88,9 @@
 
         @include tablet {
             flex-direction: column;
-            padding: 0px;
+            padding: 24px 32px;
         }
+
 
         @include mobile {
             flex-direction: column;
@@ -76,6 +98,10 @@
         }
 
         .Image_and_slider {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 24px;
             order: 1;
 
             @include both {
@@ -83,35 +109,121 @@
             }
 
             .clinic_banner_image {
+                width: 100%;
+                max-width: 856px;
+
+                @include tablet {
+                    max-width: 100%;
+                }
+
+                @include mobile {
+                    display: none;
+                }
 
                 .clinic_img {
-                    width: 856px;
-                    height: 456px;
+                    width: 100%;
+                    height: auto;
+                    max-height: 456px;
                     object-fit: cover;
                     border-radius: 16px;
 
-                    @include tablet {
-                        width: 100%;
-                        height: auto;
+
+                }
+            }
+
+            .slider {
+                width: 100%;
+                max-width: 856px;
+                margin: 0 auto;
+                padding: 0 24px;
+
+                @include tablet {
+                    width: 100%;
+
+                }
+
+                @include mobile {
+                    width: 100%;
+                    padding: 24px;
+                }
+
+
+                .slick-slider {
+                    position: relative;
+                }
+
+                .slick-list {
+                    border-radius: 12px;
+                    overflow: hidden;
+                }
+
+                .slick-slide {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 24px;
+
+                    img {
+                        width: 164px;
+                        height: 113px;
+                        object-fit: cover;
+                        border-radius: 12px;
+
+                        @include tablet {
+                            width: 126px;
+                            height: 113px;
+                        }
+
+                        @include mobile {
+                            width: 358px;
+                            height: 456px;
+                        }
                     }
 
-                    @include mobile {
-                        width: 100%;
-                        height: auto;
+                }
+
+                .slick-dots {
+                    bottom: 10px;
+
+                    li button:before {
+                        font-size: 10px;
+                        color: black;
+                        opacity: 0.5;
+                    }
+
+                    li.slick-active button:before {
+                        color: $primary-500;
+                    }
+                }
+
+                .slick-prev,
+                .slick-next {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 10;
+                    width: 40px;
+                    height: 40px;
+
+
+                    &::before {
+                        font-size: 40px;
+                        color: $secondary-text;
                     }
                 }
             }
+
         }
 
 
 
         .clinic_banner_info {
             background-color: $accent;
-            width: 416px;
+            width: 100%;
             height: 470px;
             padding: 24px;
             border-radius: 16px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -121,7 +233,6 @@
 
             @include tablet {
                 order: 1;
-
                 width: 100%;
                 height: auto;
             }
@@ -525,7 +636,7 @@
             padding: 32px 0;
             width: 854px;
 
-            @include both{
+            @include both {
                 width: 100%;
             }
 

@@ -1,27 +1,85 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useLocation, useParams } from 'react-router-dom';
 import './Clinic.scss';
 import { IoMdStar } from 'react-icons/io';
 import { MdOutlineMail } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
-import Choose from './components/Choose';
+// import Choose from './components/Choose';
 import Treatments from './components/Treatments';
 import Team from './components/Team';
 import Reviews from './components/Reviews';
+import BookAppointment from './components/bookappointment/BookAppointment';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from "react-slick";
+import Slider1 from "../../assets/Slider1.jpg"
+import Slider2 from "../../assets/Slider2.jpg"
+import Slider3 from "../../assets/Slider3.jpg"
+import Slider4 from "../../assets/Slider4.jpg"
 
 
 function Clinic() {
 
-    // const { clinicId } = useParams();
+    const [showPopup, setShowPopup] = useState(false);
     const location = useLocation();
     const clinic = location.state?.clinic;
+    console.log("rerender");
+    
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 615,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 500, 
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+
+        ]
+    };
+
 
     return (
         <div className="clinic_page">
+            {showPopup && (
+                <>
+                    <div className="overlay_blur" />
+                    <div className="appointment_popup_overlay">
+                        <BookAppointment onClick={() => setShowPopup(false)} clinicName={clinic.Pname} />
+                    </div>
+                </>
+            )}
             <div className="clinic_nav">
                 <ul>
                     <li><NavLink to="#gallery" className="clinic_tab">Gallery</NavLink></li>
-                    <li><NavLink to="#about" className="clinic_tab">About us</NavLink></li>
+                    {/* <li><NavLink to="#about" className="clinic_tab">About us</NavLink></li> */}
                     <li><NavLink to="#treatments" className="clinic_tab">Treatments & Pricing</NavLink></li>
                     <li><NavLink to="#team" className="clinic_tab">Our Team</NavLink></li>
                     <li><NavLink to="#reviews" className="clinic_tab">Reviews & Ratings</NavLink></li>
@@ -36,7 +94,17 @@ function Clinic() {
                     </div>
 
                     <div className='slider'>
-
+                        <Slider {...settings}>
+                            <div><img src={Slider1} alt="1" /></div>
+                            <div><img src={Slider2} alt="2" /></div>
+                            <div><img src={Slider3} alt="3" /></div>
+                            <div><img src={Slider4} alt="4" /></div>
+                            <div><img src={Slider1} alt="5" /></div>
+                            <div><img src={Slider2} alt="6" /></div>
+                            <div><img src={Slider3} alt="7" /></div>
+                            <div><img src={Slider4} alt="8" /></div>
+                            <div><img src={clinic.image} alt="8" /></div>
+                        </Slider>
                     </div>
 
                 </div>
@@ -68,7 +136,7 @@ function Clinic() {
                         </div>
                     </div>
                     <div className='clinic_buttons'>
-                        <button className="clinic_button primary_btn">
+                        <button className="clinic_button primary_btn" onClick={() => setShowPopup(true)}>
                             Book an Appointment
                         </button>
 
@@ -87,7 +155,7 @@ function Clinic() {
                     <p className="about_text">{clinic.about}</p>
                 </div>
 
-                <Choose />
+                {/* <Choose /> */}
                 <Treatments />
                 <Team />
                 <Reviews />
