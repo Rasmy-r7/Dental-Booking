@@ -45,7 +45,10 @@ function Treatments() {
                                     <div className="treatment_list">
                                         {category.treatments.map((item, i) => (
                                             <div className="treatment_card" key={i}>
-                                                <p className="treatment_name">{item.name}</p>
+                                                <div className='name_date'>
+                                                    <p className="treatment_name">{item.name}</p>
+                                                    <p className='treatment_date'>1 day</p>
+                                                </div>
                                                 <p className="treatment_price">
                                                     Rs. {item.price.toLocaleString()}
                                                 </p>

@@ -513,11 +513,26 @@
                         padding: 8px;
                         border-bottom: 1px solid $border;
 
-                        .treatment_name {
-                            font-size: 16px;
-                            font-weight: 400;
-                            color: $primary-text;
+                        .name_date {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 4px;
+
+                            .treatment_name {
+                                font-size: 16px;
+                                font-weight: 400;
+                                color: $primary-text;
+                            }
+
+                            .treatment_date {
+                                font-size: 14px;
+                                font-weight: 400;
+                                color: $secondary-text;
+                            }
+
                         }
+
+
 
                         .treatment_price {
                             font-size: 16px;
